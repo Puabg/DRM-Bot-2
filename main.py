@@ -13,7 +13,7 @@ from tglogging import TelegramLogHandler
 # Config 
 class Config(object):
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "8403544311:AAG5eDkyybOv3N_-TmTXyifFO8jtIhuj7r8")
-    API_ID = int(os.environ.get("API_ID",  "20073998"))
+    API_ID = int(os.environ.get("API_ID", "20073998"))
     API_HASH = os.environ.get("API_HASH", "4a6646ff9aa61d078637ea05853bc317")
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     SESSIONS = "./SESSIONS"
@@ -46,7 +46,6 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.info("live log streaming to telegram.")
-
 
 # Store
 class Store(object):
@@ -100,11 +99,8 @@ if __name__ == "__main__":
         chat_id.append(i)
         chat_id.append(j)
     
-    
     async def main():
         await PRO.start()
-        # h = await PRO.get_chat_member(chat_id= int(-1002115046888), user_id=6695586027)
-        # print(h)
         bot_info = await PRO.get_me()
         LOGGER.info(f"<--- @{bot_info.username} Started --->")
         
